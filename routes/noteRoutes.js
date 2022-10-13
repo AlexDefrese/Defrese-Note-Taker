@@ -1,9 +1,9 @@
 
 
 const router = require("express").Router();
-// const {
-//     notes
-// } = require('../../db/db');
+const {
+    notes
+} = require('../note');
 const {
     createNewNote,
     deleteNote
@@ -15,7 +15,7 @@ router.get('/notes', (req, res) => {
     res.json(saved);
 })
 
-router.post('/notes', (req, res) => {
+router.post('./notes', (req, res) => {
     let notes = createNewNote(req.body, notes);
     req.body.id = notes.length.toString();
     res.json(notes);
